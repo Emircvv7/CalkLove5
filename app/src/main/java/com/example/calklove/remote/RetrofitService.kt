@@ -1,4 +1,4 @@
-package com.example.calklove
+package com.example.calklove.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,5 +10,3 @@ class RetrofitService {
 
     var api = retrofit.create(LoveApi::class.java)
 }
-
-//https://love-calculator.p.rapidapi.com/getPercentage?sname=Alice&fname=John

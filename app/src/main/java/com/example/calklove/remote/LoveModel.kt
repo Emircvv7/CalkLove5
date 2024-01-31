@@ -1,4 +1,4 @@
-package com.example.calklove
+package com.example.calklove.remote
 
 data class LoveModel(
     var firstName: String,
