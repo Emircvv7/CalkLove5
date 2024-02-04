@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.calklove.remote.LoveModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoveViewModel : ViewModel() {
-    private val repository = Repository()
+@HiltViewModel
+class LoveViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+
     var liveData: MutableLiveData<LoveModel> = MutableLiveData()
 
     fun getLove(firstName: String, secondName: String) {

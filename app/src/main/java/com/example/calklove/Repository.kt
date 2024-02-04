@@ -3,6 +3,7 @@ package com.example.calklove
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.calklove.remote.LoveApi
 import com.example.calklove.remote.LoveModel
 import com.example.calklove.remote.RetrofitService
 import kotlinx.coroutines.Dispatchers
@@ -10,9 +11,10 @@ import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class Repository {
-    val api = RetrofitService().api
+class Repository @Inject constructor(private val api: LoveApi){
+
 
     suspend fun getLoveModel(firstName: String, secondName: String): LiveData<LoveModel> {
         val mutableLiveData = MutableLiveData<LoveModel>()
